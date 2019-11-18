@@ -6,6 +6,7 @@ Created on Sun Nov 17 17:39:27 2019
 """
 
 """Programm zum Auslosen von Wichtelpartnern"""
+import json
 from random import randint
 tL = [] #Liste Teilnehmer
 
@@ -50,38 +51,84 @@ def automatischPartner(tL):
         p2 = pL2.pop(ridx) #Übergibt Name und entfernt ihn danach aus der Liste
         partner.update({p1:p2})
 
-    """Dokumenterstellung"""
-    for x in partner:
-        f = open(str(x)+".txt", "w+")
-        f.write("Dein*e Partner*in ist... \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + str(partner[x]))
-        f.close()
+    """Noch einmal überprüfen"""
+    for (k,v) in partner.items():
+        if k == v:
+            automatischPartner(tL)
 
+    """Dokumenterstellung"""
+    #for x in partner:
+     #   f = open(str(x)+".txt", "w+")
+      #  f.write("Dein*e Partner*in ist... \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" + str(partner[x]))
+       # f.close()
+   
+    j = json.dumps(partner)
+    f = open("matches.json", "w+")
+    f.write(j)
+    f.close()
+        
     print("Alle Teilnehmer*innen haben jetzt eine*n Partner*in!\nDie Dateien sind Abgespeichert.\nViel Spaß beim Wichteln!")
 
-""" Teilnehmer*innen hinzufügen"""
-while True:
-    teilnehmer = str(input("Teilnehmer*in eingeben: "))
-    print("Eingabe: " + teilnehmer)
-    answer = input("Teilnehmer*in so hinzufügen?")
-    if weitermachen(answer,tL, True) == False:
-        answer2 = input("Noch jemanden hinzufügen?")
-        if weitermachen(answer2, tL) == False:
-            break
+""" Manuell Teilnehmer*innen hinzufügen"""
+def manuellhinzufuegen():
+    while True:
+        teilnehmer = str(input("Teilnehmer*in eingeben: "))
+        print("Eingabe: " + teilnehmer)
+        answer = input("Teilnehmer*in so hinzufügen?")
+        if weitermachen(answer,tL, True) == False:
+            answer2 = input("Noch jemanden hinzufügen?")
+            if weitermachen(answer2, tL) == False:
+                break
+            else:
+                continue
+        if teilnehmer in tL:
+            print("Person ist schon Teilnehmer*in!")
+            answer = input("Noch ein*e Teilnehmer*in? ")
+            if weitermachen(answer, tL) == False:
+                break
+            else:
+                continue
         else:
-            continue
-    if teilnehmer in tL:
-        print("Person ist schon Teilnehmer*in!")
-        answer = input("Noch ein*e Teilnehmer*in? ")
-        if weitermachen(answer, tL) == False:
+            tL.append(teilnehmer)
+    
+        answer = input("Noch ein*e Teilnehmer*in?")
+        if weitermachen(answer,tL) == False:
             break
-        else:
-            continue
-    else:
-        tL.append(teilnehmer)
+""" Automatisch Teilnehmer*innen hinzufügen"""
+def automatischhinzufuegen():
+    p = open("participants.json", "r")
+    participants = json.load(p)
+    p.close()
+    
+    for (k, v) in participants.items():
+        tL.append(k)
 
-    answer = input("Noch ein*e Teilnehmer*in?")
-    if weitermachen(answer,tL) == False:
-        break
+
+
+"""Fragt ab, ob manuell oder automatisch hinzugefügt werdden soll"""
+def autovsmanu():
+    answer = input("Soll manuell oder automatisch hinzugefuegt werden?")
+    if answer == "manuell" or answer == "manu" or answer == "m":
+        manuellhinzufuegen()
+    elif answer == "automatisch" or answer == "auto" or answer == "a":
+        beshure()
+    else:
+        print("Falsche Eingabe! Nur 'automatisch' oder 'manuell'. Versuch es nochmal:")
+        autovsmanu()
+        
+        
+def beshure():
+    shure = input("Sicher, dass automatisch hinzugefuegt werden soll? Eine Datei 'participants.json' muss bereitgestellt werden:")
+    if shure == "ja" or shure == "j" or shure == "Ja":
+        automatischhinzufuegen()
+    elif shure == "nein" or shure == "n" or shure == "Nein":
+        autovsmanu()
+    else:
+        print("Falsche Eingabe! Nur 'Ja' oder 'Nein'. Versuch es nochmal:")
+        beshure()
+
+
+autovsmanu()
 
 print("Teilnehmer*innen: ")
 for x in tL:

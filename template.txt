@@ -1,0 +1,14 @@
+Hallo ${NAME},
+
+Ich freue mich weihnachtlich, dass du beim diesjaehrigen Wichteln mitmachst!
+Die Lose sind gezogen...
+
+Dein*e Partner*in ist *trommelwirbel* 
+!!${PARTNER}!!
+
+Viel Spass beim Gruebeln und Geschenke einpacken. 
+
+Ein wichteliges Weihnachten!
+
+Dein
+Cris
