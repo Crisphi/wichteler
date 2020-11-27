@@ -1,14 +1,28 @@
 Hallo ${NAME},
 
-Ich freue mich weihnachtlich, dass du beim diesjaehrigen Wichteln mitmachst!
-Die Lose sind gezogen...
+Dieses Jahr ist besonders in jeder Form.
+Wir leben in einer schweren Zeit, die uns einiges abverlangt.
+Umso wichtiger ist es sich dazwischen zu erinnern, dass wir nicht alleine sind.
+Deshalb wird auch dieses Jahr das alljaehrliche Weihnachtswichteln stattfinden,
+allerdings in coronakonformer Manier.
 
-Dein*e Partner*in ist *trommelwirbel* 
+Ich freue mich sehr, dass du dieses Jahr beim Wichteln mitmachst und ein bisschen Liebe versendest.
+Dir wurde automatisiert ein*e Wichtelpartner*in zugewiesen, den*die du bereits kennen solltest.
+
+Dein*e Partner*in ist *trommelwirbel*
 !!${PARTNER}!!
 
-Viel Spass beim Gruebeln und Geschenke einpacken. 
+Bitte besorge fuer dein*e Partner*in eine kleine Aufmerksamkeit im Wert von ca. 5 Euro
+und versende es bis zum 24.12.2020 an folgende Adresse:
 
-Ein wichteliges Weihnachten!
+${ADRESSE}
+
+Lasst uns diese Zeit ein bisschen heller machen.
+Ich habe dich lieb und bin froh, dass ich dich habe.
+
+MEHR LIEBE!
+
+Pass auf dich auf, tu dir was gutes und bleib gesund!
 
 Dein
 Cris

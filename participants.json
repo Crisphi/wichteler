@@ -1,0 +1,27 @@
+{
+	"Example1": {
+    	"mail": "Emailadresse",
+    	"adress": "Anschriftsname\nStraße Nr.\nPLZ Stadt",
+    	"blacklist": ["Example3"]
+	},
+	"Example2": {
+    	"mail": "example2@mail.de",
+    	"adress": "Crisis\nMustermannstr. 12\n PLZ Nuernberg",
+    	"blacklist": []
+	},
+	"Example3": {
+        "mail": "example3@mail.de",
+    	"adress": "Ms. Klingelschild\nMustermannstr. 1\n91054 Erlangen",
+    	"blacklist": ["Example1", "Example4"]
+	},
+	"Example4": {
+				"mail": "example4@mail.de",
+			"adress": "Max Mustermann\nMuellerstr ohne Umlaute. 3a\nPLZ Stadt",
+			"blacklist": ["Example1", "Example4"]
+	},
+	"Example5": {
+				"mail": "example5@mail.de",
+			"adress": "Max Mustermann\nMuellerstr ohne Umlaute. 3a\nPLZ Stadt",
+			"blacklist": ["Example1", "Example4"]
+	}
+}
