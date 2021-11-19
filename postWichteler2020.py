@@ -11,7 +11,7 @@ Created on Fri Nov 20 19:38:20 2020
 
 @author: CrisO
 """
-
+"""2020 Update: Jetzt mit Blacklists!"""
 """Programm zum Auslosen von Wichtelpartnern"""
 
 import json
