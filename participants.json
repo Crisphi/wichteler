@@ -1,27 +1,50 @@
 {
-	"Example1": {
-    	"mail": "Emailadresse",
-    	"adress": "Anschriftsname\nStraße Nr.\nPLZ Stadt",
-    	"blacklist": ["Example3"]
+	"Cris": {
+    	"mail": "cris.ortega@outlook.de",
+    	"adress": "Cristian Ortega Singer\nDrausnickstr. 6\n91052 Erlangen",
+    	"pronouns": "he/er",
+    	"blacklist": ["Clarissa"]
 	},
-	"Example2": {
-    	"mail": "example2@mail.de",
-    	"adress": "Crisis\nMustermannstr. 12\n PLZ Nuernberg",
-    	"blacklist": []
+	"Clarissa": {
+        "mail": "clary.hoell@gmail.com",
+    	"adress": "Clarissa Höll\nBuchenschlag 16\n91227 Leinburg",
+    	"pronouns": "sie",
+    	"blacklist": ["El", "Claudi"]
 	},
-	"Example3": {
-        "mail": "example3@mail.de",
-    	"adress": "Ms. Klingelschild\nMustermannstr. 1\n91054 Erlangen",
-    	"blacklist": ["Example1", "Example4"]
+	"Claudi": {
+		"mail": "claudiaweis@online.de",
+		"adress": "Claudia Weis\nLandgrabenstraße 130\n90459 Nuernberg",
+		"pronouns": "sie",
+		"blacklist": ["Clarissa", "Sab"]
 	},
-	"Example4": {
-				"mail": "example4@mail.de",
-			"adress": "Max Mustermann\nMuellerstr ohne Umlaute. 3a\nPLZ Stadt",
-			"blacklist": ["Example1", "Example4"]
+	"El": {
+		"mail": "anna.isa.ortega@web.de",
+		"adress": "Isabel Ortega Singer\nEndenicher Allee 37\n53121 Bonn",
+		"pronouns": "am Besten keine",
+		"blacklist": ["Clarissa"]
 	},
-	"Example5": {
-				"mail": "example5@mail.de",
-			"adress": "Max Mustermann\nMuellerstr ohne Umlaute. 3a\nPLZ Stadt",
-			"blacklist": ["Example1", "Example4"]
+	"Gesine": {
+		"mail": "gesine.gumann@gmx.de",
+		"adress": "Gesine Gumann\nHaunachstr. 44\n91245 Simmelsdorf",
+		"pronouns": "sie",
+		"blacklist": []
+	},
+	"Julia": {
+		"mail": "julia.bittner@hotmail.de",
+		"adress": "Julia Bittner\nFliederstr. 2\n91056 Erlangen",
+		"pronouns": "sie",
+		"blacklist": ["Sab", "El"]
+	},
+	"Sab": {
+		"mail": "s.kloess108@gmail.com",
+		"adress": "Sabine Klöss\nWirtshöhe 8\n91086 Aurachtal",
+		"pronouns": "keine/sie",
+		"blacklist": ["Julia", "Claudi"]
+	},
+	"Nat": {
+		"mail": "Natascha.otto@hotmail.de",
+		"adress": "Natascha Otto\nOdenwaldallee 10\n91056 Erlangen",
+		"pronouns": "sie",
+		"blacklist": []
 	}
 }

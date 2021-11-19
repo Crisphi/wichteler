@@ -12,8 +12,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 #your email account details
-ad = "example@mail.de"
-pw = "password"
+ad = "cris.ortega@outlook.de"
+pw = "6.6.11Station"
 
 #load template for email
 f = open("template.txt", "r")
@@ -38,7 +38,7 @@ s.login(ad, pw)
 for (k, v) in matches.items():
     #create message
     msg = MIMEMultipart()
-    message = template.substitute(NAME = k, PARTNER = v, ADRESSE = data[v]["adress"])
+    message = template.substitute(NAME = k, PARTNER = v, ADRESSE = data[v]["adress"], PRONOMEN = data[v]["pronouns"])
 
     #parameters of message
     msg["From"] = ad

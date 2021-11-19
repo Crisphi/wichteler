@@ -12,6 +12,8 @@ Dir wurde automatisiert ein*e Wichtelpartner*in zugewiesen, den*die du bereits k
 Dein*e Partner*in ist *trommelwirbel*
 !!${PARTNER}!!
 
+${PARTNER} benutzt folgende Pronomen: ${PRONOMEN}.
+
 Bitte besorge fuer dein*e Partner*in eine kleine Aufmerksamkeit im Wert von ca. 5 Euro
 und versende es bis zum 24.12.2020 an folgende Adresse:
 
