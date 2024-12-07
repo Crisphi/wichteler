@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <p>Um am diesjährigen Wichteln teilzunehmen, ist eine Registrierung in dieser neu entstandenen WebApp nötig. Falls dir das nicht möglich sein sollte, oder du auf anderweitige Hürden stößt, kannst du mich (aka. Cris) kontaktieren</p>
+    <h1>{% block title %}Anmeldung{% endblock %}</h1>
+    {% if error %}
+      <p class=error><strong>Error:</strong> {{ error }}</p>
+    {% endif %}
+    <form action="/login" method="POST">
+      <div class="login">
+        <div class="login-screen">
+          <div class="app-title">
+            <h2>Login</h2>
+          </div>
+          <div class="login-form">
+            <div class="control-group">
+              <input type="email" class="login-field" id="email" value="{{ request.form.username }}" placeholder="E-Mail Adresse" name="email" maxlength="255">
+              <label class="login-field-icon fui-user" for="login-mail"></label>
+            </div>
+            <div class="control-group">
+              <input type="password" class="login-field" id="password" value="" placeholder="Passwort" name="password" maxlength="100">
+              <label class="login-field-icon fui-lock" for="login-pass"></label>
+            </div>
+            <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block">
+          </div>
+        </div>
+      </div>
+    </form>
+    <p>Noch kein Account? Registriere dich hier: <a href="/registration">Registrieren</a></p>
+{% endblock %}

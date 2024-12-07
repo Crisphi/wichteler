@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Willkommen zum Wichteler! {% endblock %}</h1>
+    <h2>{{ participant['name'] }}</h2>
+    {% for item in participant %}
+      {% if item == 'password' %}
+        <span class="item badge">{{item}}   : </span><span>****************</span><br>
+      {% else %}
+      {% if item != 'id' %}
+          <span class="item badge">{{item}}   : </span><span>{{participant[item]}}</span><br>
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+{% endblock %}
