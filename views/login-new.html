@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Register & Login</title>
+</head>
+
+<body>
+    <div class="register-login-container">
+
+        <div class="register-login">
+            <form action="/login" method="post" enctype="multipart/form-data" class="log-in-form">
+                <h2>Sign in</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="username" id="username" placeholder="username">
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="email" name="user_email" id="user_email" placeholder="your@tcd.ie">
+                </div>
+                <input type="submit" value="Login" class="btn">
+                <span class="social-text">Log in with your TCD Mail!</span>
+                <div class="social-media-icons">
+
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+
+                </div>
+                <span class="account-text">Not in The Loop yet?<a href="#" id="sign-up-btn2">Sign up</a></span>
+            </form>
+
+            <form action="/register" method="post" enctype="multipart/form-data" class="sign-up-form">
+                <div class="sign-up-input">
+                    <h2>Sign up</h2>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name= "username" placeholder="Username">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="text" name="email" placeholder="Email">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="text" name="given_name" placeholder="Your name">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="text" name="surname" placeholder="Your last name">
+                    </div>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        <input type="text" name="country" placeholder="You're from">
+                    </div>
+
+                    <div class="input-field" id="birthday">
+                        <i class="fas fa-lock"></i>
+                        <input type="date" name="birthday" placeholder="Your birthday">
+                    </div>
+                    <div id="favorite-course">
+                        <span for="course">Choose your favorite module:</span>
+                        <select name="course" id="course-select">
+                            <option name="web" value="1">Web Authoring</option>
+                            <option name="audio" value="2">Audio, Video, Sensor</option>
+                            <option name="prog" value="3">Programming</option>
+                            <option name="vis" value="4">Visual Computing</option>
+                            <option name="con" value="5">Contextual Media</option>
+                        </select>
+                    </div>
+                    <input type="hidden" id="profilePic" name="profilePic" value="1">
+                    <input type="hidden" id="profilePic" name="profilePic" value="2">
+                    <input type="hidden" id="backgroundPic" name="backgroundPic" value="1">
+                    <input type="hidden" id="backgroundPic" name="backgroundPic" value="2">
+                </div>
+
+                <div class="sign-up-btn-grid">
+                    <input type="submit" value="Sign up" class="btn">
+                </div>
+                <span class="account-text">Already in The Loop?<a href="#" id="sign-in-btn2">Log in</a></span>
+            </form>
+        </div>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <h3>Already in The Loop?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt
+                        minima iure?</p>
+                    <button class="btn-register" id="sign-in-btn">Log in</button>
+                    <a href="/feed">
+                        <img src="/assets/img/loop-logo.png">
+                    </a>
+
+                </div>
+
+            </div>
+            <div class="panel right-panel">
+                <div class="content">
+                    <h3>Not in The Loop yet?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt
+                        minima iure?</p>
+                    <button class="btn-register" id="sign-up-btn">Sign up</button>
+                    <a href="/feed">
+                        <img src="/assets/img/loop-logo.png">
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/assets/javascript/login.js"></script>
+</body>
+
+</html>
