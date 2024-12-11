@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 
 const port = process.env.PORT; //define our port number, this doesn’t have to be 3000
 const path = require("path"); //required to use 'path' module that gets the current directory
@@ -26,3 +27,4 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Server started on port ${port}`);
   });
+
