@@ -17,7 +17,7 @@
         <%- include('partials/sidebar') %>
 
             <main class="main main-container" id="main">
-
+<h2>Dein Profil</h2>
                 <section class="profile-body">
                     <main id="profile-main" class="profile-main-layout">
                         <div class="container">
@@ -28,24 +28,39 @@
                                 <div class="user-info">
                                     
                                     <h1 class="user-name">
-                                        <%= user.given_name%>
-                                            <%=user.surname %>
+                                        <%= user.name%>
                                     </h1>
+
+                                    <h1 class="user-pronouns">
+                                        <%=user.pronouns %>
+                                    </h1>
+                                </div>
+                            </div>       
+                </section>
+                
+                <h2>Deine Addresse</h2>
+                <section class="profile-body">
+                    <div class="container">
+                        <!-- cover section -->
+                        <div class="cover-section">
+                            <h1 class="user-address">
+                                <%=user.shippingname %>
+                                <br>
+                                <%=user.streetandnr %>
+                                <br>
+                                <%=user.plz %>
+                                <%=user.city %>
+                                <br>
+                                <%=user.shippingnotes %>
+                            </h1>
+                            </div>
+                            </div>
+
+                </section>
+                                    
                                     
                                 
-                                </div>
-                            </div>
-                            <!-- navigation section -->
-
-
-                            <div class="profile-navigation">
-                                <ul class="profile-tabs">
-                                    <li class="tab-item">
-                                        <a href="#item1" class="active">Personal Loop</a>
-                                    </li>
-                                </ul>
-                            </div>
-                </section>
+                                
 
             </main>
             <script src="/assets/javascript/main.js"></script>

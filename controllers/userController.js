@@ -25,18 +25,20 @@ const UserController = {
   },
   register: async (req, res) =>{
       try {
-        const username = req.body.username;
+        const name = req.body.username;
         const pronouns = req.body.pronouns;
-        const email_address = req.body.email;
-        const given_name = req.body.given_name;                   
-        const address = req.body.address;
+        const email = req.body.email;
+        const shippingname = req.body.given_name;                   
+        const streetandnr = req.body.address;
         const plz = req.body.plz;
         const city = req.body.city;
+
+        // generate password with hash thingy 
         
         
         // generate the user id
-        const user_id = Math.floor((Math.random()*9000)+1000);
-        const newUser = await User.createUser({ user_id, username, pronouns, email_address, given_name, address, plz, city}); 
+        const id = Math.floor((Math.random()*9000)+1000);
+        const newUser = await User.createUser({ id, name, pronouns, email, shippingname, streetandnr, plz, city}); 
         //console.log(newUser);
         res.redirect(`/users/${user_id}`);
 

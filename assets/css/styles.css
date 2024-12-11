@@ -272,34 +272,6 @@ input {
 }
 
 
-.sidebar-title span {
-    display: block;
-    position: relative;
-    margin-block: 2rem 1.5rem;
-    text-align: center;
-    color: #444;
-    font-size: .938rem;
-}
-
-.sidebar-title span::before, 
-.sidebar-title span::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    width: 30%;
-    height: 1px;
-}
-
-.sidebar-title span::before {
-    background: linear-gradient(90deg, hsla(0, 0%, 0%, 0), hsl(210, 4%, 64%));
-    left: 0;
-}
-
-.sidebar-title span::after {
-    background: linear-gradient(90deg, hsl(210, 4%, 64%), hsla(0, 0%, 0%, 0));
-    right: 0;
-}
-
 .sidebar-logout {
     display: flex;
     align-items: center;
@@ -1350,20 +1322,7 @@ classes_tagbox .classes_tag_item #classweb {
     transition: color .4s, opacity .4s;
   }
 
-  .sidebar-title {
-    position: relative;
-  }
-
-  .sidebar-title::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(90deg, hsla(0, 0%, 0%, 0), hsl(210, 4%, 64%), hsla(0, 0%, 0%, 0));
-    opacity: 0;
-  }
+  
 
   .sidebar-profile {
     column-gap: 1rem;
@@ -1371,11 +1330,6 @@ classes_tagbox .classes_tag_item #classweb {
     margin-top: auto;
   }
 
-  .sidebar-title, 
-  .sidebar-title::after, 
-  .sidebar-title span {
-    transition: opacity .4s;
-  }
 
   .sidebar-select-small {
     display: block;
