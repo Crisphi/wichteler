@@ -13,11 +13,10 @@ const db = knex({
   });
 
 const Login = {
-    verifyUser: async (name, email) => {
+    verifyUser: async (email) => {
         try {
-            console.log(name, email);
-            const user = await db.select('*').from('users').where({ username: name, email_address: email }).first();
-            console.log("Query Ran:", user);
+            const user = await db.select('*').from('participants').where({ email: email }).first();
+            console.log("Query ran:", user);
             return user || {};
         } catch (error) {
             console.error("Error verifying user:", error);

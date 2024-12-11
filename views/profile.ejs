@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.4.0/remixicon.css" crossorigin="">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <title>Wichteler</title>
+</head>
+
+<body>
+
+    <%- include('partials/header') %>
+
+        <%- include('partials/sidebar') %>
+
+            <main class="main main-container" id="main">
+
+                <section class="profile-body">
+                    <main id="profile-main" class="profile-main-layout">
+                        <div class="container">
+                            <!-- cover section -->
+                            <div class="cover-section">
+                                
+                                <!-- user information -->
+                                <div class="user-info">
+                                    
+                                    <h1 class="user-name">
+                                        <%= user.given_name%>
+                                            <%=user.surname %>
+                                    </h1>
+                                    
+                                
+                                </div>
+                            </div>
+                            <!-- navigation section -->
+
+
+                            <div class="profile-navigation">
+                                <ul class="profile-tabs">
+                                    <li class="tab-item">
+                                        <a href="#item1" class="active">Personal Loop</a>
+                                    </li>
+                                </ul>
+                            </div>
+                </section>
+
+            </main>
+            <script src="/assets/javascript/main.js"></script>
+</body>
+
+</html>

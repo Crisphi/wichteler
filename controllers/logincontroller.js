@@ -7,17 +7,17 @@ const LoginController = {
   checkLogin: async(req, res) => {
     
     try {
-      const username = req.body.username;
       const userEmail = req.body.user_email;
-      const user = await Login.verifyUser(username, userEmail);
+      console.log(userEmail);
+      const user = await Login.verifyUser(userEmail);
       //console.log(user);
       if (user) { // if user is verified, set session details for them 
-        console.log("found user", user.user_id);
+        console.log("found user", user.id);
        // req.session.user_id = user.user_id;
         //req.session.user_name = user.username;
         //req.session.user_email = user.user_email;
 
-        return res.redirect(`/users/${user.user_id}`);
+        return res.redirect(`/users/${user.id}`);
       } else {
         console.log("no user found", user.length);
         res.redirect("/404");
