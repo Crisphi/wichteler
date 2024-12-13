@@ -1,6 +1,7 @@
 
 const express = require('express');
 const {User} = require('../models/users'); // importing all user routes
+const bcrypt = require('bcrypt'); // pw encryption
 
 
 const UserController = {
@@ -23,30 +24,43 @@ const UserController = {
         res.status(500).send("Error fetching user profile");
     }
   },
-  register: async (req, res) =>{
-      try {
-        const name = req.body.username;
-        const pronouns = req.body.pronouns;
-        const email = req.body.email;
-        const shippingname = req.body.given_name;                   
-        const streetandnr = req.body.address;
-        const plz = req.body.plz;
-        const city = req.body.city;
+  register: async (req, res) => {
+    try {
+      // load data from the form 
+        const {username, pronouns, email, password, given_name, streetandnr, plz, city } = req.body;
 
-        // generate password with hash thingy 
-        
-        
-        // generate the user id
+        // Hash the password
+        const hashedPassword = await hashPassword(password);
+
+        // generate id
         const id = Math.floor((Math.random()*9000)+1000);
-        const newUser = await User.createUser({ id, name, pronouns, email, shippingname, streetandnr, plz, city}); 
-        //console.log(newUser);
-        res.redirect(`/users/${user_id}`);
 
-      } catch (error) {
-        console.error("Error creating user", error);
-        //res.status(500).send("Error creating user");
-      }
+        // Create the user
+        const newUser = await User.createUser({
+            id: id,
+            name: username,
+            pronouns,
+            email,
+            password: hashedPassword, 
+            shippingname: given_name,
+            streetandnr,
+            plz,
+            city,
+        });
+
+        // Resdirect to user page 
+        
+        res.redirect(`/users/${id}`);
+    } catch (error) {
+        console.error("Error registering user:", error);
+        res.status(500).json({ error: "Failed to register user" });
     }
 }
+};
 
+// Password hashing utility
+async function hashPassword(password) {
+const saltRounds = 10;
+return await bcrypt.hash(password, saltRounds);
+}
 module.exports = UserController;
