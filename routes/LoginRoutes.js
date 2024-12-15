@@ -7,6 +7,7 @@ const login =  express.Router();
 login.get("/login", LoginController.showLogin)
 login.post("/login", LoginController.checkLogin);
 
+login.get("/logout", LoginController.logout);
  
 
 

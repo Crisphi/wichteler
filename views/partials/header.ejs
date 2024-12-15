@@ -8,12 +8,19 @@
        <a href="/feed" class="navbar-top-logo">
            <img src="/assets/img/loop-logo.png" >
        </a>
-   
+   <% if (isLoggedIn) { %>
+    <div class="login-btn">
+        <a href="/logout">
+            <button class="login-btn">Logout</button>
+        </a>
+    </div>
+   <% } else {%>
        <div class="login-btn">
            <a href="/login">
                <button class="login-btn">Login/Register</button>
            </a>
        </div>
+       <% }%>
        
     </div>
  </header>

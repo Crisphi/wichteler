@@ -1,5 +1,6 @@
 const knex = require('knex');
 const dotenv = require("dotenv");
+const bcrypt = require('bcrypt'); // pw encryption
 dotenv.config();
 
 const db = knex({
@@ -13,15 +14,23 @@ const db = knex({
   });
 
 const Login = {
-    verifyUser: async (email) => {
+    verifyUser: async (email, password) => {
         try {
             const user = await db.select('*').from('participants').where({ email: email }).first();
-            console.log("Query ran:", user);
-            return user || {};
+            let hashedPW = user.password;
+            if (encryptPassword(password, hashedPW)){
+                return user || {};
+            }
+            
         } catch (error) {
             console.error("Error verifying user:", error);
             return {};
         }
     }
 };
+
+// checking pw function
+async function encryptPassword(password, hash) {
+return await bcrypt.compare(password, hash);
+}
 module.exports = {Login};

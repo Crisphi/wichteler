@@ -4,13 +4,22 @@ require('dotenv').config();
 
 const port = process.env.PORT; //define our port number, this doesn’t have to be 3000
 const path = require("path"); //required to use 'path' module that gets the current directory
-//const session = require('express-session'); // check this out later
+const session = require('express-session'); 
 const users = require('./routes/UserRoutes'); // importing all user routes
 
 const login = require('./routes/LoginRoutes');
 
 // parsing data from forms 
 app.use(express.urlencoded({ extended: true }));
+
+// configure sessions 
+
+app.use(session({
+  secret: 'schloss-einstein',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { maxAge: 300000 } // session timeout of 5min
+}));
 
 // set up ejs templates
 app.set('view engine', 'ejs');
